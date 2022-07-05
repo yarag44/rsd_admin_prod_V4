@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "residents",
+  "info": {
+    "singularName": "resident",
+    "pluralName": "residents",
+    "displayName": "Residentes",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "LastName": {
+      "type": "string"
+    },
+    "House": {
+      "type": "string"
+    },
+    "Phone": {
+      "type": "string"
+    },
+    "Street": {
+      "type": "string"
+    },
+    "residential": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::residential.residential",
+      "inversedBy": "residents"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "resident"
+    }
+  }
+}

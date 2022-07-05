@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resident_debts",
+  "info": {
+    "singularName": "resident-debt",
+    "pluralName": "resident-debts",
+    "displayName": "Residentes Deudores",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Debt": {
+      "type": "decimal"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

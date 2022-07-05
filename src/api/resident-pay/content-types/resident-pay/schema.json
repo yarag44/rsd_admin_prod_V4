@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resident_pays",
+  "info": {
+    "singularName": "resident-pay",
+    "pluralName": "resident-pays",
+    "displayName": "Pagos",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Amount": {
+      "type": "decimal"
+    },
+    "Year": {
+      "type": "integer"
+    },
+    "Month": {
+      "type": "integer"
+    },
+    "InvoiceReceipt": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "IsPaid": {
+      "type": "boolean",
+      "default": false
+    },
+    "Comments": {
+      "type": "string"
+    },
+    "User": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "resident_pays"
+    },
+    "catalog_pay": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::catalog-pay.catalog-pay"
+    },
+    "reservation_pay": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::reservation-pay.reservation-pay",
+      "inversedBy": "resident_pays"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "residential_incomes",
+  "info": {
+    "singularName": "residential-income",
+    "pluralName": "residential-incomes",
+    "displayName": "Ingresos",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "DescriptionIncome": {
+      "type": "string"
+    },
+    "Amount": {
+      "type": "decimal"
+    },
+    "InvoiceReceipt": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Active": {
+      "type": "boolean",
+      "default": true
+    },
+    "DateIncome": {
+      "type": "datetime"
+    },
+    "Residential": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::residential.residential"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "catalog_amenidades",
+  "info": {
+    "singularName": "catalog-amenidade",
+    "pluralName": "catalog-amenidades",
+    "displayName": "Cat Amenidades",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Amenidad": {
+      "type": "string"
+    },
+    "Active": {
+      "type": "boolean",
+      "default": true
+    },
+    "residential": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::residential.residential",
+      "inversedBy": "catalog_amenidades"
+    }
+  }
+}

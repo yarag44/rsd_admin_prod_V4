@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "catalog_pays",
+  "info": {
+    "singularName": "catalog-pay",
+    "pluralName": "catalog-pays",
+    "displayName": "Cat Pagos",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "TypePay": {
+      "type": "string"
+    },
+    "Active": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

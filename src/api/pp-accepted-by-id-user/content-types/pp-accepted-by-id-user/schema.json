@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pp_accepted_by_id_users",
+  "info": {
+    "singularName": "pp-accepted-by-id-user",
+    "pluralName": "pp-accepted-by-id-users",
+    "displayName": "Priv Avisos Aceptado",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "isAccepted": {
+      "type": "boolean",
+      "default": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "pp_accepted_by_id_user"
+    }
+  }
+}

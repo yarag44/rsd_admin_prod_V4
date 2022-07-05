@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ressidential_configurations",
+  "info": {
+    "singularName": "ressidential-configuration",
+    "pluralName": "ressidential-configurations",
+    "displayName": "Configuracion",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "MonthAmount": {
+      "type": "decimal"
+    },
+    "AmenidadAmount": {
+      "type": "decimal"
+    },
+    "whatsappPhone": {
+      "type": "string"
+    },
+    "Residential": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::residential.residential"
+    }
+  }
+}

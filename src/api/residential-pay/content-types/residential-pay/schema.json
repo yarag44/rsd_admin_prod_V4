@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "residential_pays",
+  "info": {
+    "singularName": "residential-pay",
+    "pluralName": "residential-pays",
+    "displayName": "Egresos",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "DescriptionPay": {
+      "type": "string"
+    },
+    "Amount": {
+      "type": "decimal"
+    },
+    "InvoiceReceipt": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Active": {
+      "type": "boolean",
+      "default": true
+    },
+    "DatePay": {
+      "type": "datetime"
+    },
+    "Residential": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::residential.residential"
+    }
+  }
+}

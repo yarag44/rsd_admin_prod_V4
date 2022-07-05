@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "residentials",
+  "info": {
+    "singularName": "residential",
+    "pluralName": "residentials",
+    "displayName": "Cat Residenciales",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Active": {
+      "type": "boolean",
+      "default": true
+    },
+    "catalog_amenidades": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::catalog-amenidade.catalog-amenidade",
+      "mappedBy": "residential"
+    },
+    "residents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::resident.resident",
+      "mappedBy": "residential"
+    },
+    "comunications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::comunication.comunication",
+      "mappedBy": "residential"
+    }
+  }
+}

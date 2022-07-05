@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reservation_pays",
+  "info": {
+    "singularName": "reservation-pay",
+    "pluralName": "reservation-pays",
+    "displayName": "Reservaciones",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "DateTimeReservation": {
+      "type": "date"
+    },
+    "resident_pays": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::resident-pay.resident-pay",
+      "mappedBy": "reservation_pay"
+    },
+    "User": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "reservation_pays"
+    },
+    "Amenity": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::catalog-amenidade.catalog-amenidade"
+    }
+  }
+}

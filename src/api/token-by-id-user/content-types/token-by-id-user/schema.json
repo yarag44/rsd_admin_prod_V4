@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "token_by_id_users",
+  "info": {
+    "singularName": "token-by-id-user",
+    "pluralName": "token-by-id-users",
+    "displayName": "Tokens",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Token": {
+      "type": "string"
+    },
+    "Users": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "Tokens"
+    }
+  }
+}

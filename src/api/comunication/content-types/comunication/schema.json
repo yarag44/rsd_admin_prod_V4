@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "comunications",
+  "info": {
+    "singularName": "comunication",
+    "pluralName": "comunications",
+    "displayName": "Comunicados",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "DateComunicate": {
+      "type": "datetime"
+    },
+    "Comunicate": {
+      "type": "string"
+    },
+    "Images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "residential": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::residential.residential",
+      "inversedBy": "comunications"
+    }
+  }
+}
