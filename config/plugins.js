@@ -12,3 +12,12 @@ module.exports = ({ env }) => ({
     },
     // ...
   });
+
+  module.exports = {
+    // ...
+    'reports': {
+      enabled: true,
+      resolve: './src/plugins/reports'
+    },
+    // ...
+  }
