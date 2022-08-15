@@ -5,7 +5,7 @@ module.exports = ({ env }) => ({
     // ...
     'users-permissions': {
       config: {
-        jwtSecret: 'CJZEGjM/9SEyJlauai9U0w==',//env('JWT_SECRET',crypto.randomBytes(16).toString('base64')),
+        jwtSecret: env('JWT_SECRET','CJZEGjM/9SEyJlauai9U0w=='),
         jwt: {
           expiresIn: '7d',
         },
