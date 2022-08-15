@@ -77,11 +77,6 @@ const HomePage = () => {
 
         <iframe src="https://prod-report-pays-app.herokuapp.com/" style={{ width : '100%', height: '800px' }}></iframe>
 
-
-
-        {/* https://prod-report-pays-app.herokuapp.com/ */}
-
-
     </ContentLayout>
 
 
