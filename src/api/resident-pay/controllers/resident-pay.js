@@ -31,7 +31,7 @@ module.exports = createCoreController('api::resident-pay.resident-pay', ({ strap
              amount: (parseFloat(amount).toFixed(2) * 100).toFixed(0), //totalPayment * 100,
              currency: "mxn",
              source: strapitoken,
-             description: `ID Usuario: ${user.id} UserName: ${user.username} Concepto: ${catPaid.TypePay}` ,
+             description: `ID Usuario: ${user.id} UserName: ${user.username} Concepto: ${catPaid.attributes.TypePay}` ,
            });
          }
      }

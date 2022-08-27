@@ -25,6 +25,30 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::residential.residential"
+    },
+    "hasDebtors": {
+      "type": "boolean",
+      "default": true
+    },
+    "hasIncomes": {
+      "type": "boolean",
+      "default": true
+    },
+    "hasExpenses": {
+      "type": "boolean",
+      "default": true
+    },
+    "hasPays": {
+      "type": "boolean",
+      "default": true
+    },
+    "hasCommunication": {
+      "type": "boolean",
+      "default": true
+    },
+    "hasReservations": {
+      "type": "boolean",
+      "default": true
     }
   }
 }

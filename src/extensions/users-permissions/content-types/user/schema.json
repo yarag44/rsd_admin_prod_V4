@@ -92,6 +92,10 @@
       "relation": "oneToMany",
       "target": "api::token-by-id-user.token-by-id-user",
       "mappedBy": "Users"
+    },
+    "isTestUser": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
