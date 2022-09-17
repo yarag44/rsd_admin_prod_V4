@@ -7,7 +7,8 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "build:win": "cross-env NODE_ENV=production npm run build"
   },
   "devDependencies": {},
   "dependencies": {
@@ -15,6 +16,7 @@
     "@strapi/plugin-users-permissions": "4.2.2",
     "@strapi/strapi": "4.2.2",
     "better-sqlite3": "7.4.6",
+    "firebase-tools": "^11.9.0",
     "pg": "^8.7.3",
     "stripe": "^9.11.0"
   },
