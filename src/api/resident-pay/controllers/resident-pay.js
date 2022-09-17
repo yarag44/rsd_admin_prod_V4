@@ -17,18 +17,21 @@ module.exports = createCoreController('api::resident-pay.resident-pay', ({ strap
      //createCoreController('api::resident-pay.resident-pay');
 
 
-     const { auth,formData,amount,strapitoken,user,comments,month,year,catPaid,SelectedAmenity,resultPago,dateTimeReservation } = ctx.request.body;
+     const { auth,formData,amount,strapitoken,user,comments,month,year,catPaid,SelectedAmenity,resultPago,dateTimeReservation,objCT,changeTypeQTY } = ctx.request.body;
 
-        console.log(SelectedAmenity);
+     //   console.log(SelectedAmenity);
     //  console.log(user);
     //  console.log('strapitoken ' + strapitoken);
+
+        console.log(objCT.id);
+
 
      if(strapitoken)
      {
          if(strapitoken.length > 0)
          {
            const charge = await stripe.charges.create({
-             amount: (parseFloat(amount).toFixed(2) * 100).toFixed(0), //totalPayment * 100,
+             amount: (objCT.id === 1) ? (parseFloat(amount).toFixed(2) * 100).toFixed(0) : (parseFloat(amount * changeTypeQTY).toFixed(2) * 100).toFixed(0)  , 
              currency: "mxn",
              source: strapitoken,
              description: `ID Usuario: ${user.id} UserName: ${user.username} Concepto: ${catPaid.attributes.TypePay}` ,
@@ -101,7 +104,7 @@ module.exports = createCoreController('api::resident-pay.resident-pay', ({ strap
 
          entryReservation = await strapi.db.query("api::reservation-pay.reservation-pay").create(dataReservation);
 
-         console.log(entryReservation);
+        // console.log(entryReservation);
 
 
 
@@ -113,7 +116,9 @@ module.exports = createCoreController('api::resident-pay.resident-pay', ({ strap
             User : user,
             'catalog_pay' : catPaid,
             'publishedAt': new Date(),
-            'reservation_pay' : entryReservation && entryReservation 
+            'reservation_pay' : entryReservation && entryReservation,
+            'cat_moneda' : objCT ,
+            'CT' : (objCT.id === 2) ? changeTypeQTY : 0 
             //,
             //Amenity : SelectedAmenity
         }
@@ -132,7 +137,11 @@ else
         Comments : comments,
         User : user,
         'catalog_pay' : catPaid,
-        'publishedAt': new Date()
+        'publishedAt': new Date(),
+        'cat_moneda' : objCT ,
+        'CT' : (objCT.id === 2) ? changeTypeQTY : 0
+
+
         //'reservation_pay' : entryReservation && entryReservation 
         //,
         //Amenity : SelectedAmenity

@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cat_currencies",
+  "info": {
+    "singularName": "cat-currency",
+    "pluralName": "cat-currencies",
+    "displayName": "Cat Moneda",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Currency": {
+      "type": "string"
+    }
+  }
+}

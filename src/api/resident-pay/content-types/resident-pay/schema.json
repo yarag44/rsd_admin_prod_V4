@@ -55,6 +55,14 @@
       "relation": "manyToOne",
       "target": "api::reservation-pay.reservation-pay",
       "inversedBy": "resident_pays"
+    },
+    "cat_moneda": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::cat-currency.cat-currency"
+    },
+    "CT": {
+      "type": "decimal"
     }
   }
 }
